@@ -12,10 +12,7 @@ export default class ItemDetailsComponent extends React.Component {
         if (this.props.selectedItem.rover !== undefined) {
             return (
                 <View style={{paddingTop:90, marginLeft: 10, height: Dimensions.get('window').height}}>
-                    <Text >
-                        {this.props.selectedItem.rover.name} &nbsp;
-                        {this.props.selectedItem.id}
-                    </Text>
+                    <Text>{this.props.selectedItem.rover.name} {this.props.selectedItem.id}</Text>
                     <Image
                         style={{
                             flex: 1,
