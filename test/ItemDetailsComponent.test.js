@@ -3,16 +3,13 @@ import { shallow, mount, render } from 'enzyme';
 import {Text, Image} from 'react-native';
 
 import ItemDetailsComponent from '../src/components/ItemDetailsComponent';
+import { getItem } from './ItemDataSet';
 
 describe('Rendering item details', function() {
 
     it('item details with selected item', function() {
-        let selectedItemProps = {
-            id: 123,
-            rover: {name: 'testName'},
-            img_src: 'image1'
-        };
-        let component = shallow(<ItemDetailsComponent selectedItem={selectedItemProps} />)
+        let item = getItem(123, 'testName', 'image1');
+        let component = shallow(<ItemDetailsComponent selectedItem={item} />)
         expect(
             component.contains([
                 <Text>testName 123</Text>

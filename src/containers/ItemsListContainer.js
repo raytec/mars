@@ -28,7 +28,7 @@ function prepareFilteredItemsList(textToFind, list) {
 const mapStateToProps = (state) => {
     return {
         textToFind: state.itemsListReducer.textToFind,
-        isLoading: state.itemsListReducer.loading,
+        loading: state.itemsListReducer.loading,
 
         stateActions: {
                 getItemsList: () => prepareFilteredItemsList(

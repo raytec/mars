@@ -29,14 +29,14 @@ export default class ItemsListComponent extends React.Component {
                     style={{height: 40, borderColor: 'gray', borderWidth: 1, margin: 8}}
                 />
                 <List>
-                    <FlatList
+                    <FlatList data-test='items-list'
                         keyExtractor={(item) => item.id.toString()}
                         onEndReached={() => {this.props.dispatchActions.showList()}}
                         data={this.props.stateActions.getItemsList()}
                         renderItem={({item}) => this.renderItem(item)}
                     />
-                    <ActivityIndicator
-                        animating={this.props.isLoading}
+                    <ActivityIndicator data-test='preloader'
+                        animating={this.props.loading}
                         style={[{height: 40}]}
                         color="#C00"
                         size="large"
@@ -48,22 +48,25 @@ export default class ItemsListComponent extends React.Component {
     }
 
     renderItem = (item) => {
+
+        if (item.id === undefined) {
+            return ( <View></View> );
+        }
+
         return (
-            <TouchableOpacity onPress={() => this.onPressItem(item)}>
+            <TouchableOpacity onPress={() => this.onPressItem(item)} data-test='touchable-item'>
                 <View style={{flexDirection: 'row', flex: 1}}>
                     <View>
-                        <Image
+                        <Image data-test='item-details-image'
                             style={{width: 170, height: 110, padding: 10, margin: 10}}
                             source={{uri:item.img_src}}
                         />
                     </View>
-                    <View>
-                        <Text style={{fontSize: 12,padding: 0, margin: 0}}>
+                    <View data-test='item-details-desc'>
+                        <Text data-test="item-label" style={{fontSize: 12,padding: 0, margin: 0}}>
                             {'\n'}Vehicle name:
                         </Text>
-                        <Text style={{fontSize: 16}}>
-                            {item.rover.name}
-                        </Text>
+                        <Text>{item.rover.name}</Text>
                         <Text style={{fontSize: 12}}>
                             {'\n'}Photo id:
                         </Text>
@@ -73,7 +76,6 @@ export default class ItemsListComponent extends React.Component {
                     </View>
                 </View>
             </TouchableOpacity>
-
         );
     };
 }
