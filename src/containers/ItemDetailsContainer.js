@@ -7,7 +7,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => { return {} }
+const mapDispatchToProps = (dispatch) => {
+    return {}
+}
 
 const ItemDetailsContainer = connect(mapStateToProps, mapDispatchToProps)(ItemDetailsComponent);
 export default ItemDetailsContainer;

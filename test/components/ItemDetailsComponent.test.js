@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import {Text, Image} from 'react-native';
+import {shallow} from 'enzyme';
+import {Text} from 'react-native';
 
-import ItemDetailsComponent from '../src/components/ItemDetailsComponent';
-import { getItem } from './ItemDataSet';
+import ItemDetailsComponent from '../../src/components/ItemDetailsComponent';
+import { getItem } from '../ItemDataSet';
 
 describe('Rendering item details', function() {
 

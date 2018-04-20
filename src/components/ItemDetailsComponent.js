@@ -8,7 +8,6 @@ export default class ItemDetailsComponent extends React.Component {
     }
 
     render() {
-
         if (this.props.selectedItem.rover !== undefined) {
             return (
                 <View style={{paddingTop:90, marginLeft: 10, height: Dimensions.get('window').height}}>
@@ -32,4 +31,3 @@ export default class ItemDetailsComponent extends React.Component {
         );
     }
 }
-

@@ -22,10 +22,10 @@ function prepareFilteredItemsList(textToFind, list) {
     return textToFind === undefined ?
         list:
         list.filter((item) => {return item.id.toString().includes(textToFind)}
-        );
+    );
 }
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
     return {
         textToFind: state.itemsListReducer.textToFind,
         loading: state.itemsListReducer.loading,
@@ -40,7 +40,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => { return { dispatchActions: dispatchActions(dispatch) } };
+export const mapDispatchToProps = (dispatch) => {
+    return { dispatchActions: dispatchActions(dispatch) }
+};
 
 const ItemsListContainer = connect(mapStateToProps, mapDispatchToProps)(ItemsListComponent);
 export default ItemsListContainer;

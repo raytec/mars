@@ -1,3 +1,5 @@
+![STATUS](https://travis-ci.org/raytec/mars.svg?branch=master)
+
 # Mars photos
 ## Customized run
 ### `npm run ios`
