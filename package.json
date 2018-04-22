@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "ios": "./sh/install-ios.sh"
+    "ios": "./sh/install-ios.sh",
+    "android": "./sh/run-android-localset.sh"
   },
   "dependencies": {
     "axios": "^0.18.0",

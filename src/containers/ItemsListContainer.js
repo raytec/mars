@@ -7,13 +7,13 @@ import {applyItemsListInstantFilterAction} from "../actions/itemsListActions";
 const dispatchActions = (dispatch) => {
     return {
         showList: () => {
-            dispatch(showListAction());
+            return dispatch(showListAction());
         },
         selectItem: (itemName) => {
-            dispatch(showItemDetailsAction(itemName));
+            return dispatch(showItemDetailsAction(itemName));
         },
         applyItemListFilter: (search) => {
-            dispatch(applyItemsListInstantFilterAction(search));
+            return dispatch(applyItemsListInstantFilterAction(search));
         }
     };
 };
