@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
+    "test": "flow && jest",
+    "flow": "flow",
     "ios": "./sh/install-ios.sh",
     "android": "./sh/run-android-localset.sh"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.70.0",
     "react": "16.3.1",
     "react-native": "0.55.3",
     "react-native-elements": "^0.19.1",

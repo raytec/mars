@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, Text, View, Image} from 'react-native';
+import {Dimensions, Text, View, Image} from 'react-native';
 
 export default class ItemDetailsComponent extends React.Component {
 
