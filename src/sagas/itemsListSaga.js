@@ -11,18 +11,18 @@ const ITEM_LIST_URL = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/
 var pageNumber = 0;
 var itemsList = [];
 
-function responseHandler(response) {
+export function responseHandler(response) {
     itemsList = itemsList.concat(response.data.photos);
 }
 
-function fetchPhotosList() {
+export function fetchPhotosList() {
     return axios({
         method: "get",
         url: ITEM_LIST_URL + '&page=' + (++pageNumber)
     });
 }
 
-function* getItemsList(action) {
+export function* getItemsList(action) {
     try {
         const response = yield call(fetchPhotosList);
         responseHandler(response);
