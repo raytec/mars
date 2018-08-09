@@ -1,4 +1,4 @@
-![STATUS](https://travis-ci.org/raytec/mars.svg?branch=master)
+![STATUS](https://travis-ci.org/raytec/react-native-example-app-mars-photos.svg?branch=master)
 
 # Mars photos
 ## Customized run
